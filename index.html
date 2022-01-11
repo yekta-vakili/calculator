@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CALCULATOR</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="main">
+      <div class="calculator">
+        <input type="text" id="input-1" />
+        <table>
+          <tr class="btn">
+            <td class="btn1"><button class="btn2" id="clear">AC</button></td>
+            <td class="btn1">
+              <button onclick="to_su()" class="btn2" id="tot-sub">+/-</button>
+            </td>
+            <td class="btn1">
+              <button onclick="perc1()" class="btn2" id="perc">%</button>
+            </td>
+            <td class="btn1">
+              <button onclick="division1()" class="btn2" id="division">
+                /
+              </button>
+            </td>
+          </tr>
+          <tr class="btn">
+            <td class="btn1"><button class="btn2" id="seven">7</button></td>
+            <td class="btn1"><button class="btn2" id="eight">8</button></td>
+            <td class="btn1"><button class="btn2" id="nine">9</button></td>
+            <td class="btn1">
+              <button onclick="multi1()" class="btn2" id="multi">*</button>
+            </td>
+          </tr>
+          <tr class="btn">
+            <td class="btn1"><button class="btn2" id="four">4</button></td>
+            <td class="btn1"><button class="btn2" id="five">5</button></td>
+            <td class="btn1"><button class="btn2" id="six">6</button></td>
+            <td class="btn1">
+              <button onclick="Submission()" class="btn2" id="submi">-</button>
+            </td>
+          </tr>
+          <tr class="btn">
+            <td class="btn1"><button class="btn2" id="one">1</button></td>
+            <td class="btn1"><button class="btn2" id="two">2</button></td>
+            <td class="btn1"><button class="btn2" id="three">3</button></td>
+            <td class="btn1">
+              <button onclick="sum1()" class="btn2" id="sum">+</button>
+            </td>
+          </tr>
+          <tr class="btn">
+            <td class="btn1" colspan="2">
+              <button class="btn2" id="zero">0</button>
+            </td>
+            <td class="btn1"><button class="btn2" id="ashari">.</button></td>
+            <td class="btn1">
+              <button onclick="equal1()" class="btn2" id="equal">=</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <script>
+      var input1 = document.getElementById("input-1");
+      var zero = document.getElementById("zero");
+      var one = document.getElementById("one");
+      var two = document.getElementById("two");
+      var three = document.getElementById("three");
+      var four = document.getElementById("four");
+      var five = document.getElementById("five");
+      var six = document.getElementById("six");
+      var seven = document.getElementById("seven");
+      var eight = document.getElementById("eight");
+      var nine = document.getElementById("nine");
+      var clear = document.getElementById("clear");
+      var tot_sub = document.getElementById("tot-sub");
+      var perc = document.getElementById("perc");
+      var division = document.getElementById("division");
+      var multi = document.getElementById("multi");
+      var submi = document.getElementById("submi");
+      var sum = document.getElementById("sum");
+      var ashari = document.getElementById("ashari");
+      var equal = document.getElementById("equal");
+      var a, b, c;
+      var name;
+      zero.onclick = function () {
+        input1.value += 0;
+      };
+      one.onclick = function () {
+        input1.value += 1;
+      };
+      two.onclick = function () {
+        input1.value += 2;
+      };
+      three.onclick = function () {
+        input1.value += 3;
+      };
+      four.onclick = function () {
+        input1.value += 4;
+      };
+      five.onclick = function () {
+        input1.value += 5;
+      };
+      six.onclick = function () {
+        input1.value += 6;
+      };
+      seven.onclick = function () {
+        input1.value += 7;
+      };
+      eight.onclick = function () {
+        input1.value += 8;
+      };
+      nine.onclick = function () {
+        input1.value += 9;
+      };
+      ashari.onclick = function () {
+        input1.value += ".";
+      };
+      clear.onclick = function () {
+        input1.value = "";
+      };
+      function sum1() {
+        a = parseFloat(input1.value);
+        input1.value = "";
+        alert("عدد دوم را وارد کنید!");
+        name = "sum";
+      }
+      function Submission() {
+        a = parseFloat(input1.value);
+        input1.value = "";
+        alert("عدد دوم را وارد کنید!");
+        name = "sub";
+      }
+      function to_su() {
+        a = parseFloat(input1.value);
+        input1.value = "";
+        name = "to-su";
+      }
+      function perc1() {
+        a = parseFloat(input1.value);
+        input1.value = "";
+        name = "perc";
+      }
+      function division1() {
+        a = parseFloat(input1.value);
+        input1.value = "";
+        alert("عدد دوم را وارد کنید!");
+        name = "divi";
+      }
+      function multi1() {
+        a = parseFloat(input1.value);
+        input1.value = "";
+        alert("عدد دوم را وارد کنید!");
+        name = "mul";
+      }
+      function ashar() {
+        a = parseFloat(input1.value);
+        input1.value = "";
+        name = "ashar";
+      }
+      function equal1() {
+        b = parseFloat(input1.value);
+        if (name == "sum") {
+          c = a + b;
+          input1.value = c;
+        } else if (name == "sub") {
+          c = a - b;
+          input1.value = c;
+        } else if (name == "perc") {
+          c = a / 100;
+          input1.value = c;
+        } else if (name == "divi") {
+          c = a / b;
+          input1.value = c;
+        } else if (name == "mul") {
+          c = a * b;
+          input1.value = c;
+        } else if (name == "to-su") {
+          c = a * -1;
+          input1.value = c;
+        }
+      }
+    </script>
+  </body>
+</html>
